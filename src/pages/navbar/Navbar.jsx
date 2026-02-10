@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logo.png";
+import { Menu } from "lucide-react";
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -53,7 +54,7 @@ export const Navbar = () => {
                         onClick={() => setOpen(!open)}
                         className="lg:hidden text-gray-700 focus:outline-none"
                     >
-                        ☰
+                         <Menu />
                     </button>
                 </div>
 

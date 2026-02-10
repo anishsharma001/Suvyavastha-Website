@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import heroVideo from "../../assets/hero/heroVideo.mp4";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const marqueeRef = useRef(null);
@@ -62,7 +63,9 @@ const HeroSection = () => {
           </p>
 
           <button className="mt-8 inline-flex items-center gap-2 bg-white text-[#0B1F6A] px-6 py-3 rounded-md text-sm font-semibold hover:bg-gray-100 transition">
-            Consult with our Technical Advisors →
+            <Link to="/#contact">
+              Consult with our Technical Advisors →
+            </Link>
           </button>
         </div>
       </div>

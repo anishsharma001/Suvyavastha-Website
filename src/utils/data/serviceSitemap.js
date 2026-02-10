@@ -33,7 +33,7 @@ export const sections = [
         ],
     },
     {
-        title: "Web & Mobile2",
+        title: "Web & Mobile",
         items: [
             "Web Application Development",
             "Mobile App Development",
@@ -44,7 +44,7 @@ export const sections = [
         ],
     },
     {
-        title: "AI, Data & Intelligence2",
+        title: "AI, Data & Intelligence",
         items: [
             "Artificial Intelligence Development",
             "Generative AI (LLMs, RAG, AI Agents)",
@@ -54,7 +54,7 @@ export const sections = [
         ],
     },
     {
-        title: "Cloud, DevOps & Infrastructure2",
+        title: "Cloud, DevOps & Infrastructure",
         items: [
             "Cloud Migration",
             "Cloud App Development",
@@ -66,7 +66,7 @@ export const sections = [
         ],
     },
     {
-        title: "Software Engineering2",
+        title: "Software Engineering",
         items: [
             "Custom Software Development",
             "Enterprise Software Solutions",
@@ -77,7 +77,7 @@ export const sections = [
         ],
     },
     {
-        title: "Web & Mobile2",
+        title: "Web & Mobile",
         items: [
             "Web Application Development",
             "Mobile App Development",

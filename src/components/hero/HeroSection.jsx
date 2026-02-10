@@ -20,8 +20,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="scroll-mt-24 relative w-full h-[86vh] min-h-[600px] overflow-hidden font-inter">
-
+    <section
+      id="hero"
+      className="scroll-mt-24 relative w-full h-[calc(100vh-105px)] overflow-hidden font-inter"
+    >
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"

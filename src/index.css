@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter;
+}
+
+/* hide scrollbar but allow scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.input {
+  @apply w-full border border-gray-300 rounded-md
+         px-4 py-3 text-sm text-[#2B2B2B]
+         bg-white
+         focus:outline-none focus:ring-1 focus:ring-[#7A4DFF]
+         focus:border-[#7A4DFF];
+}
+
+
+/* ===== Draggable Progress Line (No Thumb) ===== */
+.progress-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #7A4DFF var(--progress),
+    #ECEBFF var(--progress)
+  );
+  cursor: pointer;
+}
+
+.progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.progress-slider::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: none;
+}
+
+.progress-slider::-moz-range-track {
+  background: transparent;
+}

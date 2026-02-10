@@ -1,5 +1,5 @@
 import React from "react";
-import { steps } from "../../utils/data/WhatHappensNext";
+import { steps } from "../../utils/data/whatHappensNext";
 
 const WhatHappensNext = () => {
   return (

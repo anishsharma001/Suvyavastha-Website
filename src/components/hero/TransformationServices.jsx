@@ -6,7 +6,7 @@ const TransformationServices = () => {
   const [loadedImages, setLoadedImages] = useState({});
 
   return (
-    <section className="w-full bg-[#BDA3F3] bg-opacity-[20%]">
+    <section id="services" className="scroll-mt-24 w-full bg-[#BDA3F3] bg-opacity-[20%]">
       <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
         <h2 className="text-2xl font-semibold text-[#2B2B2B]">
           Transformation Services

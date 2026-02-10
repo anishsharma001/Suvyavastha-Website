@@ -11,7 +11,7 @@ const GetInTouch = () => {
     const [jobStep, setJobStep] = useState(0);
 
     return (
-        <section className="bg-white w-full">
+        <section id="contact" className="scroll-mt-24 bg-white w-full">
             <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
                 <h2 className="text-xl font-semibold text-[#2B2B2B]">
                     Get in Touch

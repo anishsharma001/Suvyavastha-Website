@@ -5,7 +5,7 @@ const IndustriesWeServe = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter">
+    <section id="industries" className="scroll-mt-24 bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-2xl font-semibold text-[#2B2B2B]">

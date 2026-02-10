@@ -3,7 +3,7 @@ import teamImage from "../../assets/GroupImg/groupImg.png"
 
 const WhatWeAre = () => {
   return (
-    <section className="w-full bg-white">
+    <section id="company" className="scroll-mt-24 w-full bg-white">
       <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
       {/* Heading */}
       <h2 className="text-2xl font-semibold text-[#2B2B2B]">

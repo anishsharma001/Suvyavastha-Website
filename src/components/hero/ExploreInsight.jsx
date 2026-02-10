@@ -31,7 +31,7 @@ const ExploreInsights = () => {
     }, []);
 
     return (
-        <section className="bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter">
+        <section id="blogs" className="scroll-mt-24 bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
                 <div className="flex justify-between items-start gap-6">

@@ -15,7 +15,7 @@ const ExecutionProcess = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className="w-full bg-white">
+    <section id="execution" className="scroll-mt-24 w-full bg-white">
       <div className="max-w-7xl mx-auto px-3 py-16 font-inter">
       {/* Heading */}
       <h2 className="text-xl font-semibold text-[#2B2B2B]">

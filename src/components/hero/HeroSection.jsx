@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[86vh] min-h-[600px] overflow-hidden font-inter">
+    <section id="hero" className="scroll-mt-24 relative w-full h-[86vh] min-h-[600px] overflow-hidden font-inter">
 
       {/* Background Video */}
       <video
@@ -43,7 +43,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+      <div className="relative z-10 max-w-7xl pl-4 md:pl-[10vw] h-full flex items-center">
         <div className="max-w-2xl text-white">
           <h1 className="text-3xl sm:text-4xl font-semibold leading-tight">
             When your business can’t afford

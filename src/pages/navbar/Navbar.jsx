@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logo.png";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
+
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
 
+    const handleLogo = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     return (
-        <nav className="font-inter">
+        <nav className="font-inter sticky top-0 z-50 bg-white">
             {/* Top Info Bar */}
             <div className="w-full bg-[#262F97] text-white text-sm">
                 <div className="mx-auto px-4 py-2 flex justify-center items-center gap-3">
@@ -16,8 +22,10 @@ export const Navbar = () => {
                     {/* Dot */}
                     <span className="w-1.5 h-1.5 bg-[#7B7BE2] rounded-full"></span>
 
-                    <span className="cursor-pointer font-medium">
-                        Start a Conversation
+                    <span className="cursor-pointer font-medium hover:text-gray-200">
+                        <Link to="/#contact">
+                            Start a Conversation
+                        </Link>
                     </span>
 
                 </div>
@@ -29,24 +37,41 @@ export const Navbar = () => {
                 <div className="mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
                     {/* Logo */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2" onClick={handleLogo}>
                         <img src={logo} alt="Suvyavastha Logo" className="" />
                     </div>
 
                     {/* Desktop Menu */}
                     <nav className="hidden lg:flex items-center gap-8 text-gray-700 font-medium">
-                        <a href="#" className="hover:text-[#262F97]">Services</a>
-                        <a href="#" className="hover:text-[#262F97]">Industries</a>
-                        <a href="#" className="hover:text-[#262F97]">Blogs</a>
-                        <a href="#" className="hover:text-[#262F97]">Company</a>
-                        <a href="#" className="hover:text-[#262F97]">Contact</a>
+                        <Link to="/#services" className="hover:text-[#262F97]">
+                            Services
+                        </Link>
+
+                        <Link to="/#industries" className="hover:text-[#262F97]">
+                            Industries
+                        </Link>
+
+                        <Link to="/#blogs" className="hover:text-[#262F97]">
+                            Blogs
+                        </Link>
+
+                        <Link to="/#company" className="hover:text-[#262F97]">
+                            Company
+                        </Link>
+
+                        <Link to="/#contact" className="hover:text-[#262F97]">
+                            Contact
+                        </Link>
+
                     </nav>
 
                     {/* CTA Button */}
                     <div className="hidden lg:block">
-                        <button className="bg-[#05129C] text-white px-6 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition">
-                            Book a Call
-                        </button>
+                        <Link to="/#contact">
+                            <button className="bg-[#05129C] text-white px-6 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition">
+                                Book a Call
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -54,7 +79,7 @@ export const Navbar = () => {
                         onClick={() => setOpen(!open)}
                         className="lg:hidden text-gray-700 focus:outline-none"
                     >
-                         <Menu />
+                        <Menu />
                     </button>
                 </div>
 
@@ -62,14 +87,31 @@ export const Navbar = () => {
                 {open && (
                     <div className="lg:hidden bg-white border-t">
                         <nav className="flex flex-col gap-4 px-4 py-4 text-gray-700 font-medium">
-                            <a href="#">Services</a>
-                            <a href="#">Industries</a>
-                            <a href="#">Blogs</a>
-                            <a href="#">Company</a>
-                            <a href="#">Contact</a>
-                            <button className="mt-2 bg-[#05129C] text-white py-2 rounded-md font-semibold">
-                                Book a Call
-                            </button>
+                            <Link to="/#services" className="hover:text-[#262F97]">
+                                Services
+                            </Link>
+
+                            <Link to="/#industries" className="hover:text-[#262F97]">
+                                Industries
+                            </Link>
+
+                            <Link to="/#insights" className="hover:text-[#262F97]">
+                                Blogs
+                            </Link>
+
+                            <Link to="/#about" className="hover:text-[#262F97]">
+                                Company
+                            </Link>
+
+                            <Link to="/#contact" className="hover:text-[#262F97]">
+                                Contact
+                            </Link>
+
+                            <Link to="/#contact">
+                                <button className="mt-2 bg-[#05129C] text-white px-6 py-2 rounded-md font-semibold">
+                                    Book a Call
+                                </button>
+                            </Link>
                         </nav>
                     </div>
                 )}

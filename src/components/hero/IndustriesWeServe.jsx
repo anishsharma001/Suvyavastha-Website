@@ -12,7 +12,7 @@ const IndustriesWeServe = () => {
           Industries We Serve
         </h2>
         <p className="mt-2 text-sm text-[#3C3C3C] max-w-2xl">
-          We work with industries where software reliability is not optional—
+          We work with industries where software reliability is not optional - 
           systems that carry operational, financial, regulatory, or public trust
           responsibilities.
         </p>

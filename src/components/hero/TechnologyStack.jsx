@@ -23,7 +23,7 @@ const TechnologyStack = () => {
   }, []);
 
   return (
-    <section id="tech" className="scroll-mt-24 bg-white w-full">
+    <section id="tech" className="scroll-mt-24 bg-white w-full py-10">
       <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
         <h2 className="text-xl font-semibold text-gray-900">
           Technology Stack & Platforms

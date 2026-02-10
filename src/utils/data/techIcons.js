@@ -31,7 +31,7 @@ import jest from "../../assets/techIcons/jest.png";
 import junit from "../../assets/techIcons/junit.png";
 import NextJs from "../../assets/techIcons/next.png";
 import oAuth2 from "../../assets/techIcons/oauth.png";
-import phpLaravel from "../../assets/techIcons/phpLaravel.png";
+import phpLaravel from "../../assets/techIcons/phplaravel.png";
 import Postman from "../../assets/techIcons/postman.png";
 import Python from "../../assets/techIcons/python.png";
 import RabbitMQ from "../../assets/techIcons/rabbitmq.png";

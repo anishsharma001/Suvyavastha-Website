@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { techStack } from "../../utils/data/techIcons.js";
+import { techStack } from "../../utils/data/techIcons";
 
 const TechnologyStack = () => {
   const trackRef = useRef(null);

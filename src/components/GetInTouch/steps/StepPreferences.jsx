@@ -1,18 +1,33 @@
-const StepPreferences = ({ data, setData }) => {
+const StepPreferences = ({ data, setData, errors }) => {
+    const inputClass = (field) =>
+        `input ${errors[field] ? "border border-red-500" : "border border-gray-300"}`;
+
+    const isEmpty = (val) => !val || val.trim() === "";
+
     return (
         <div className="space-y-4">
-            <input
-                className="input"
-                placeholder="Position You’re Applying For*"
-                value={data.position || ""}
-                onChange={(e) =>
-                    setData({ ...data, position: e.target.value })
-                }
-            />
 
+            {/* Position */}
+            <div>
+                <input
+                    className={inputClass("position")}
+                    placeholder="Position You’re Applying For*"
+                    value={data.position || ""}
+                    onChange={(e) =>
+                        setData({ ...data, position: e.target.value })
+                    }
+                />
+                {errors.position && (
+                    <p className="text-xs text-red-500 mt-1">
+                        {errors.position}
+                    </p>
+                )}
+            </div>
+
+            {/* Employment Type */}
             <div className="relative">
                 <select
-                    className="input appearance-none pr-10"
+                    className={`${inputClass("employmentType")} appearance-none pr-10`}
                     value={data.employmentType || ""}
                     onChange={(e) =>
                         setData({ ...data, employmentType: e.target.value })
@@ -28,15 +43,21 @@ const StepPreferences = ({ data, setData }) => {
                     <option>Consulting</option>
                 </select>
 
-                {/* Custom dropdown arrow */}
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▾
                 </span>
+
+                {errors.employmentType && (
+                    <p className="text-xs text-red-500 mt-1">
+                        {errors.employmentType}
+                    </p>
+                )}
             </div>
 
+            {/* Availability */}
             <div className="relative">
                 <select
-                    className="input appearance-none pr-10"
+                    className={`${inputClass("availability")} appearance-none pr-10`}
                     value={data.availability || ""}
                     onChange={(e) =>
                         setData({ ...data, availability: e.target.value })
@@ -51,15 +72,21 @@ const StepPreferences = ({ data, setData }) => {
                     <option>Flexible / Negotiable</option>
                 </select>
 
-                {/* Custom dropdown arrow */}
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▾
                 </span>
+
+                {errors.availability && (
+                    <p className="text-xs text-red-500 mt-1">
+                        {errors.availability}
+                    </p>
+                )}
             </div>
 
+            {/* Location */}
             <div className="relative">
                 <select
-                    className="input appearance-none pr-10"
+                    className={`${inputClass("location")} appearance-none pr-10`}
                     value={data.location || ""}
                     onChange={(e) =>
                         setData({ ...data, location: e.target.value })
@@ -74,15 +101,21 @@ const StepPreferences = ({ data, setData }) => {
                     <option>Hybrid</option>
                 </select>
 
-                {/* Custom dropdown arrow */}
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▾
                 </span>
+
+                {errors.location && (
+                    <p className="text-xs text-red-500 mt-1">
+                        {errors.location}
+                    </p>
+                )}
             </div>
 
+            {/* Authorization */}
             <div className="relative">
                 <select
-                    className="input appearance-none pr-10"
+                    className={`${inputClass("authorization")} appearance-none pr-10`}
                     value={data.authorization || ""}
                     onChange={(e) =>
                         setData({ ...data, authorization: e.target.value })
@@ -95,10 +128,15 @@ const StepPreferences = ({ data, setData }) => {
                     <option>No</option>
                 </select>
 
-                {/* Custom dropdown arrow */}
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▾
                 </span>
+
+                {errors.authorization && (
+                    <p className="text-xs text-red-500 mt-1">
+                        {errors.authorization}
+                    </p>
+                )}
             </div>
         </div>
     );

@@ -1,18 +1,26 @@
-const StepExperience = ({ data, setData }) => {
+const StepExperience = ({ data, setData, errors }) => {
+    const inputClass = (field) =>
+        `input ${errors[field] ? "border border-red-500" : "border border-gray-300"}`;
+
     return (
         <div className="space-y-4">
-            <input
-                className="input"
-                placeholder="Current Role / Designation*"
-                value={data.role || ""}
-                onChange={(e) =>
-                    setData({ ...data, role: e.target.value })
-                }
-            />
+            <div>
+                <input
+                    className={inputClass("role")}
+                    placeholder="Current Role / Designation*"
+                    value={data.role || ""}
+                    onChange={(e) =>
+                        setData({ ...data, role: e.target.value })
+                    }
+                />
+                {errors.role && (
+                    <p className="text-xs text-red-500 mt-1">{errors.role}</p>
+                )}
+            </div>
 
-            <div className="relative">
+            <div>
                 <select
-                    className="input appearance-none pr-10"
+                    className={inputClass("experience")}
                     value={data.experience || ""}
                     onChange={(e) =>
                         setData({ ...data, experience: e.target.value })
@@ -28,22 +36,19 @@ const StepExperience = ({ data, setData }) => {
                     <option>8–12 years</option>
                     <option>12+ years</option>
                 </select>
-
-                {/* Custom dropdown arrow */}
-                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
-                    ▾
-                </span>
+                {errors.experience && (
+                    <p className="text-xs text-red-500 mt-1">{errors.experience}</p>
+                )}
             </div>
 
-            <div className="relative">
+            <div>
                 <select
-                    className="input appearance-none pr-10"
+                    className={inputClass("skill")}
                     value={data.skill || ""}
                     onChange={(e) =>
                         setData({ ...data, skill: e.target.value })
                     }
                 >
-                    {/* Placeholder option (never styled) */}
                     <option value="" disabled>
                         Primary Skill Area*
                     </option>
@@ -55,13 +60,10 @@ const StepExperience = ({ data, setData }) => {
                     <option>DevOps / Cloud</option>
                     <option>Other</option>
                 </select>
-
-                {/* Dropdown arrow */}
-                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
-                    ▾
-                </span>
+                {errors.skill && (
+                    <p className="text-xs text-red-500 mt-1">{errors.skill}</p>
+                )}
             </div>
-
         </div>
     );
 };

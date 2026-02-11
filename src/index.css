@@ -16,7 +16,7 @@ body {
 }
 
 .input {
-  @apply w-full border border-gray-300 rounded-md
+  @apply w-full rounded-md
          px-4 py-3 text-sm text-[#2B2B2B]
          bg-white
          focus:outline-none focus:ring-1 focus:ring-[#7A4DFF]

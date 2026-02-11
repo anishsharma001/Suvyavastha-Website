@@ -1,31 +1,57 @@
 import { UploadCloud } from "lucide-react";
 
 const StepDocuments = ({ data, setData, errors }) => {
+  const inputClass = (field) =>
+    `input ${
+      errors[field] ? "border border-red-500" : "border border-gray-300"
+    }`;
+
   return (
     <div className="space-y-5 h-fit">
+      
       {/* LinkedIn */}
-      <input
-        className="input"
-        placeholder="LinkedIn Profile URL*"
-        value={data.linkedin || ""}
-        onChange={(e) =>
-          setData({ ...data, linkedin: e.target.value })
-        }
-      />
+      <div>
+        <input
+          className={inputClass("linkedin")}
+          placeholder="LinkedIn Profile URL*"
+          value={data.linkedin || ""}
+          onChange={(e) =>
+            setData({ ...data, linkedin: e.target.value })
+          }
+        />
+        {errors.linkedin && (
+          <p className="text-xs text-red-500 mt-1">
+            {errors.linkedin}
+          </p>
+        )}
+      </div>
 
       {/* Portfolio */}
-      <input
-        className="input"
-        placeholder="GitHub / Portfolio / Personal Website (optional)"
-        value={data.portfolio || ""}
-        onChange={(e) =>
-          setData({ ...data, portfolio: e.target.value })
-        }
-      />
+      <div>
+        <input
+          className={inputClass("portfolio")}
+          placeholder="GitHub / Portfolio / Personal Website (optional)"
+          value={data.portfolio || ""}
+          onChange={(e) =>
+            setData({ ...data, portfolio: e.target.value })
+          }
+        />
+        {errors.portfolio && (
+          <p className="text-xs text-red-500 mt-1">
+            {errors.portfolio}
+          </p>
+        )}
+      </div>
 
       {/* Resume Upload */}
       <label className="block cursor-pointer">
-        <div className="border-2 border-dashed border-gray-300 rounded-lg py-3 px-6 text-center hover:border-[#7A4DFF] transition">
+        <div
+          className={`border-2 border-dashed rounded-lg py-3 px-6 text-center transition ${
+            errors.resume
+              ? "border-red-500"
+              : "border-gray-300 hover:border-[#7A4DFF]"
+          }`}
+        >
           <UploadCloud className="mx-auto w-6 h-6 text-gray-400" />
 
           <p className="mt-2 font-medium text-[#2B2B2B]">
@@ -45,6 +71,12 @@ const StepDocuments = ({ data, setData, errors }) => {
           />
         </div>
       </label>
+
+      {errors.resume && (
+        <p className="text-xs text-red-500 -mt-3">
+          {errors.resume}
+        </p>
+      )}
 
       {/* Additional Documents */}
       <label className="block cursor-pointer">
@@ -72,9 +104,8 @@ const StepDocuments = ({ data, setData, errors }) => {
         </div>
       </label>
 
-      {/* Submit Row */}
+      {/* Confirmation */}
       <div className="flex items-center justify-between pt-2">
-        {/* Confirmation */}
         <label className="flex items-center gap-2 text-sm">
           <input
             type="checkbox"
@@ -82,7 +113,9 @@ const StepDocuments = ({ data, setData, errors }) => {
             onChange={(e) =>
               setData({ ...data, confirmed: e.target.checked })
             }
-            className="accent-green-600"
+            className={`accent-green-600 ${
+              errors.confirmed ? "outline outline-red-500" : ""
+            }`}
           />
           <span>
             I confirm that the information provided is accurate.
@@ -90,10 +123,9 @@ const StepDocuments = ({ data, setData, errors }) => {
         </label>
       </div>
 
-      {/* Error */}
       {errors.confirmed && (
         <p className="text-xs text-red-500">
-          You must confirm before submitting.
+          {errors.confirmed}
         </p>
       )}
     </div>

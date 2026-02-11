@@ -18,7 +18,7 @@ const ExecutionProcess = () => {
         </p>
 
         {/* Process Grid */}
-        <div className="mt-10 overflow-x-auto px-5">
+        <div className="mt-10 overflow-x-auto px-5 scrollbar-hide">
           <div
             className="grid gap-y-6 min-w-[1100px]"
             style={{
@@ -34,7 +34,7 @@ const ExecutionProcess = () => {
                   onMouseLeave={() => setActiveIndex(null)}
                 >
                   <span
-                    className={`px-5 py-2 rounded-lg border-2 text-base font-medium transition whitespace-nowrap cursor-pointer
+                    className={`px-5 py-2 rounded-lg border-2 text-base font-medium transition whitespace-nowrap cursor-pointer hover:scale-105
                       ${
                         activeIndex === index
                           ? "bg-[#5804BF] border-[#5804BF] text-white"

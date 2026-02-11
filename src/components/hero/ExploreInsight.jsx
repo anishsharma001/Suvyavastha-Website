@@ -121,33 +121,53 @@ const InsightCard = ({ category, title, image, meta, large }) => {
     return (
         <div
             className={`
-        relative rounded-xl overflow-hidden text-white
-        ${large ? "row-span-2 h-[380px]" : "h-[180px]"}
-      `}
+            relative rounded-xl overflow-hidden text-white group cursor-pointer
+            ${large ? "row-span-2 h-[380px]" : "h-[180px]"}
+        `}
         >
             {/* Background image */}
             <img
                 src={image}
                 alt={title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="
+                    absolute inset-0 w-full h-full object-cover
+                    transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
+                    group-hover:scale-110
+                    group-hover:rotate-[0.5deg]
+                    will-change-transform
+                "
                 loading="lazy"
             />
 
-            {/* Dark overlay */}
-            {/* <div className="absolute inset-0 bg-black/45" /> */}
+            {/* Animated overlay */}
+            <div
+                className="
+                    absolute inset-0 bg-black/30
+                    transition-all duration-500
+                    group-hover:bg-black/50
+                "
+            />
+
+            {/* Subtle gradient for readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
             {/* Content */}
-            <div className="relative z-10 p-5 h-full flex flex-col">
+            <div
+                className="
+                    relative z-10 p-5 h-full flex flex-col
+                    transition-transform duration-500
+                    group-hover:-translate-y-1
+                "
+            >
                 {/* Top content */}
                 <div>
                     <span className="text-xs opacity-80 block">
                         {category}
                     </span>
 
-                    {/* Divider line */}
-                    <div className="mt-2 h-[2px] w-28 bg-white/50 rounded-full" />
+                    <div className="mt-2 h-[2px] w-28 bg-white/60 rounded-full transition-all duration-500 group-hover:w-36" />
 
-                    <h3 className="mt-3 text-sm font-medium leading-snug">
+                    <h3 className="mt-3 text-sm font-medium leading-snug transition-all duration-500 group-hover:translate-x-1">
                         {title}
                     </h3>
                 </div>
@@ -162,7 +182,6 @@ const InsightCard = ({ category, title, image, meta, large }) => {
         </div>
     );
 };
-
 
 
 export default ExploreInsights;

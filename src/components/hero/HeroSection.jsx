@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="scroll-mt-24 relative w-full h-[calc(100vh-105px)] overflow-hidden font-inter"
+      className="scroll-mt-24 relative w-full h-[calc(100vh-170px)]  md:h-[calc(100vh-105px)] overflow-hidden font-inter"
     >
       {/* Background Video */}
       <video

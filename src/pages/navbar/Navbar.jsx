@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo/logo.png";
-import { Menu } from "lucide-react";
+import logo from "../../assets/logo/logo.svg";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
@@ -43,23 +43,23 @@ export const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <nav className="hidden lg:flex items-center gap-8 text-gray-700 font-medium">
-                        <Link to="/#services" className="hover:text-[#262F97]">
+                        <Link to="/#services" className="hover:text-[#262F97] hover:scale-105">
                             Services
                         </Link>
 
-                        <Link to="/#industries" className="hover:text-[#262F97]">
+                        <Link to="/#industries" className="hover:text-[#262F97] hover:scale-105">
                             Industries
                         </Link>
 
-                        <Link to="/#blogs" className="hover:text-[#262F97]">
+                        <Link to="/#blogs" className="hover:text-[#262F97] hover:scale-105">
                             Blogs
                         </Link>
 
-                        <Link to="/#company" className="hover:text-[#262F97]">
+                        <Link to="/#company" className="hover:text-[#262F97] hover:scale-105">
                             Company
                         </Link>
 
-                        <Link to="/#contact" className="hover:text-[#262F97]">
+                        <Link to="/#contact" className="hover:text-[#262F97] hover:scale-105">
                             Contact
                         </Link>
 
@@ -68,7 +68,7 @@ export const Navbar = () => {
                     {/* CTA Button */}
                     <div className="hidden lg:block">
                         <Link to="/#contact">
-                            <button className="bg-[#05129C] text-white px-6 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition">
+                            <button className="bg-[#05129C] text-white px-6 py-2 rounded-md text-sm font-semibold hover:scale-105 hover:opacity-90 transition">
                                 Book a Call
                             </button>
                         </Link>
@@ -79,14 +79,14 @@ export const Navbar = () => {
                         onClick={() => setOpen(!open)}
                         className="lg:hidden text-gray-700 focus:outline-none"
                     >
-                        <Menu />
+                        { open ? <X /> : <Menu />}
                     </button>
                 </div>
 
                 {/* Mobile Menu */}
                 {open && (
                     <div className="lg:hidden bg-white border-t">
-                        <nav className="flex flex-col gap-4 px-4 py-4 text-gray-700 font-medium">
+                        <nav className="flex flex-col gap-4 px-8 py-6 text-gray-700 font-medium">
                             <Link to="/#services" className="hover:text-[#262F97]">
                                 Services
                             </Link>
@@ -108,7 +108,7 @@ export const Navbar = () => {
                             </Link>
 
                             <Link to="/#contact">
-                                <button className="mt-2 bg-[#05129C] text-white px-6 py-2 rounded-md font-semibold">
+                                <button className="mt-2 bg-[#05129C] text-white px-6 py-2 rounded-md font-semibold hover:scale-105">
                                     Book a Call
                                 </button>
                             </Link>

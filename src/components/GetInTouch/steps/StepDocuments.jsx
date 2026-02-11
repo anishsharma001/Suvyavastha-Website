@@ -2,13 +2,12 @@ import { UploadCloud } from "lucide-react";
 
 const StepDocuments = ({ data, setData, errors }) => {
   const inputClass = (field) =>
-    `input ${
-      errors[field] ? "border border-red-500" : "border border-gray-300"
+    `input ${errors[field] ? "border border-red-500" : "border border-gray-300"
     }`;
 
   return (
     <div className="space-y-5 h-fit">
-      
+
       {/* LinkedIn */}
       <div>
         <input
@@ -46,20 +45,26 @@ const StepDocuments = ({ data, setData, errors }) => {
       {/* Resume Upload */}
       <label className="block cursor-pointer">
         <div
-          className={`border-2 border-dashed rounded-lg py-3 px-6 text-center transition ${
-            errors.resume
+          className={`border-2 border-dashed rounded-lg py-3 px-6 text-center transition ${errors.resume
               ? "border-red-500"
               : "border-gray-300 hover:border-[#7A4DFF]"
-          }`}
+            }`}
         >
           <UploadCloud className="mx-auto w-6 h-6 text-gray-400" />
 
           <p className="mt-2 font-medium text-[#2B2B2B]">
             Upload Resume / CV*
           </p>
-          <p className="mt-1 text-xs text-gray-500">
-            Attach a File (PDF, DOC – Max size – 5MB max)
-          </p>
+
+          {data.resume ? (
+            <p className="mt-1 text-sm text-green-600 font-medium">
+              ✅ {data.resume.name}
+            </p>
+          ) : (
+            <p className="mt-1 text-xs text-gray-500">
+              Attach a File (PDF, DOC – Max size – 5MB max)
+            </p>
+          )}
 
           <input
             type="file"
@@ -71,6 +76,7 @@ const StepDocuments = ({ data, setData, errors }) => {
           />
         </div>
       </label>
+
 
       {errors.resume && (
         <p className="text-xs text-red-500 -mt-3">
@@ -86,9 +92,16 @@ const StepDocuments = ({ data, setData, errors }) => {
           <p className="mt-2 font-medium text-[#2B2B2B]">
             Upload Additional Documents (optional)
           </p>
-          <p className="mt-1 text-xs text-gray-500">
-            Attach a File (PDF, DOC – Max size – 5MB max)
-          </p>
+
+          {data.additionalDocs ? (
+            <p className="mt-1 text-sm text-green-600 font-medium">
+              ✅ {data.additionalDocs.name}
+            </p>
+          ) : (
+            <p className="mt-1 text-xs text-gray-500">
+              Attach a File (PDF, DOC – Max size – 5MB max)
+            </p>
+          )}
 
           <input
             type="file"
@@ -104,6 +117,7 @@ const StepDocuments = ({ data, setData, errors }) => {
         </div>
       </label>
 
+
       {/* Confirmation */}
       <div className="flex items-center justify-between pt-2">
         <label className="flex items-center gap-2 text-sm">
@@ -113,9 +127,8 @@ const StepDocuments = ({ data, setData, errors }) => {
             onChange={(e) =>
               setData({ ...data, confirmed: e.target.checked })
             }
-            className={`accent-green-600 ${
-              errors.confirmed ? "outline outline-red-500" : ""
-            }`}
+            className={`accent-green-600 ${errors.confirmed ? "outline outline-red-500" : ""
+              }`}
           />
           <span>
             I confirm that the information provided is accurate.

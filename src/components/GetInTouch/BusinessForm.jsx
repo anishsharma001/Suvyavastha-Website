@@ -69,21 +69,32 @@ const BusinessForm = () => {
 
         setLoading(true);
         try {
-            await fetch("/api/business-inquiry", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
+            const response = await fetch(
+                "http://localhost:2000/api/v1/business-inquiry",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || "Something went wrong");
+            }
 
             alert("Thank you! We'll get back to you shortly.");
+
             setData({});
             setErrors({});
         } catch (err) {
-            alert("Something went wrong. Please try again.");
+            alert(err.message || "Something went wrong. Please try again.");
         } finally {
             setLoading(false);
         }
     };
+
 
     const inputClass = (field) =>
         `input ${errors[field] ? "border border-red-500" : "border border-gray-300"}`;

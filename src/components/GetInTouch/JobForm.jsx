@@ -11,6 +11,7 @@ const JobForm = ({ onStepChange }) => {
     const [step, setStep] = useState(0);
     const [data, setData] = useState({});
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
     const ref = useRef(null);
 
     const steps = [
@@ -107,22 +108,48 @@ const JobForm = ({ onStepChange }) => {
         if (!validate()) return;
 
         if (step === steps.length - 1) {
-            const formData = new FormData();
-            Object.keys(data).forEach((key) => {
-                formData.append(key, data[key]);
-            });
+            try {
+                setLoading(true);
 
-            await fetch("/api/job", {
-                method: "POST",
-                body: formData,
-            });
+                const formData = new FormData();
+                Object.keys(data).forEach((key) => {
+                    formData.append(key, data[key]);
+                });
 
-            alert("Application submitted!");
+                const response = await fetch(
+                    "http://localhost:2000/api/v1/job",
+                    {
+                        method: "POST",
+                        body: formData,
+                    }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.message || "Submission failed");
+                }
+
+                alert("Application submitted successfully!");
+
+                // ✅ RESET FORM
+                setData({});
+                setErrors({});
+                setStep(0);
+
+            } catch (error) {
+                alert(error.message || "Something went wrong");
+            } finally {
+                setLoading(false);
+            }
+
         } else {
             setStep(step + 1);
             setErrors({});
         }
     };
+
+
 
     return (
         <section className="relative h-full">
@@ -141,10 +168,20 @@ const JobForm = ({ onStepChange }) => {
 
                 <button
                     onClick={next}
-                    className="ml-auto px-6 py-2 bg-[#1E40AF] text-white rounded-md"
+                    disabled={loading}
+                    className={`ml-auto px-6 py-2 rounded-md text-white transition
+                        ${loading
+                            ? "bg-gray-400 cursor-not-allowed"
+                            : "bg-[#1E40AF] hover:bg-[#1C3FAA]"
+                        }`}
                 >
-                    {step === steps.length - 1 ? "Submit" : "Continue"}
+                    {loading
+                        ? "Submitting..."
+                        : step === steps.length - 1
+                            ? "Submit"
+                            : "Continue"}
                 </button>
+
             </div>
         </section>
     );

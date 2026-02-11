@@ -75,7 +75,7 @@ const WhatWeAre = () => {
       id="company"
       className="scroll-mt-24 w-full bg-white"
     >
-      <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10 py-16 font-inter">
         {/* Heading */}
         <h2
           ref={headingRef}

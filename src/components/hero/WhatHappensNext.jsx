@@ -54,7 +54,7 @@ const WhatHappensNext = () => {
       ref={sectionRef}
       className="bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10">
         {/* Heading */}
         <h2
           ref={headingRef}

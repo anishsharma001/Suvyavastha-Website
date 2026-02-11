@@ -46,7 +46,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl pl-4 md:pl-[10vw] h-full flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 2xl:px-0 h-full flex items-center">
         <div className="max-w-2xl text-white">
           <h1 className="text-3xl sm:text-4xl font-semibold leading-tight">
             When your business can’t afford
@@ -64,7 +64,7 @@ const HeroSection = () => {
             &nbsp;•&nbsp; Owned beyond delivery
           </p>
 
-          <button className="mt-8 inline-flex items-center gap-2 bg-white text-[#0B1F6A] px-6 py-3 rounded-md text-sm font-semibold hover:bg-gray-100 transition">
+          <button className="mt-8 inline-flex items-center gap-2 bg-white text-[#0B1F6A] px-6 py-3 rounded-md text-sm font-semibold hover:bg-gray-100 hover:scale-105 transition">
             <Link to="/#contact">
               Consult with our Technical Advisors →
             </Link>

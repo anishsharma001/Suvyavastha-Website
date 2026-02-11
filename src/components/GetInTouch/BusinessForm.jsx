@@ -252,7 +252,7 @@ const BusinessForm = () => {
                     className={`px-6 py-2 rounded-md text-white transition
                         ${loading
                             ? "bg-gray-400 cursor-not-allowed"
-                            : "bg-[#1E40AF] hover:bg-[#1C3FAA]"
+                            : "bg-[#05129C] hover:bg-[#1C3FAA]"
                         }`}
                 >
                     {loading ? "Submitting..." : "Submit"}

@@ -93,7 +93,7 @@ const GetInTouch = () => {
             id="contact"
             className="scroll-mt-24 bg-white w-full"
         >
-            <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10 py-16 font-inter">
                 <h2
                     ref={headingRef}
                     className="text-xl font-semibold text-[#2B2B2B]"

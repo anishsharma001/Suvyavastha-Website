@@ -94,7 +94,7 @@ const IndustriesWeServe = () => {
           ${
             isActive
               ? "bg-[#5804BF] text-white"
-              : "bg-white text-[#5804BF]"
+              : "bg-white text-[#5804BF] hover:scale-105 transition"
           }
         `}
       >
@@ -134,7 +134,7 @@ const IndustriesWeServe = () => {
       id="industries"
       className="scroll-mt-24 bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10">
         <h2 className="text-2xl font-semibold text-[#2B2B2B]">
           Industries We Serve
         </h2>

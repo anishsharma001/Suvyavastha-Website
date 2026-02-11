@@ -7,7 +7,7 @@ const ExecutionProcess = () => {
 
   return (
     <section id="execution" className="scroll-mt-24 w-full bg-white">
-      <div className="max-w-7xl mx-auto px-3 py-16 font-inter">
+      <div className="max-w-7xl mx-auto px-3 md:px-10 py-16 font-inter">
         {/* Heading */}
         <h2 className="text-xl font-semibold text-[#2B2B2B]">
           Our Execution Process

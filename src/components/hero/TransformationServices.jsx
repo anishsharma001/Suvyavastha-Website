@@ -81,7 +81,7 @@ const TransformationServices = () => {
       id="services"
       className="scroll-mt-24 w-full bg-[#BDA3F3] bg-opacity-[20%]"
     >
-      <div className="max-w-7xl mx-auto px-6 py-16 font-inter">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10 py-16 font-inter">
         {/* Heading */}
         <h2
           ref={headingRef}
@@ -99,7 +99,7 @@ const TransformationServices = () => {
           systems with long-term responsibility, not one-time delivery.
         </p>
 
-        <div className="mt-10 space-y-6">
+        <div className="mt-10">
           {services.map((service, index) => {
             const isActive = activeIndex === index;
 
@@ -108,30 +108,33 @@ const TransformationServices = () => {
                 {/* Header */}
                 <button
                   ref={(el) => (titleRefs.current[index] = el)}
-                  onClick={() =>
-                    setActiveIndex(isActive ? null : index)
-                  }
-                  className="w-full flex items-center justify-between text-left font-medium text-[#2B2B2B] text-lg"
+                  onClick={() => setActiveIndex(isActive ? null : index)}
+                  className={`
+                    w-full flex items-center justify-between text-left 
+                    font-medium text-[#2B2B2B] text-lg
+                    p-4 rounded-md
+                    transition-all duration-300
+                    hover:bg-[#9e54f8] hover:text-white
+                  `}
                 >
                   <span>{service.title}</span>
 
                   <span
-                    className={`text-2xl transition-transform duration-300 ${
-                      isActive ? "rotate-45" : ""
-                    }`}
+                    className={`text-2xl transition-transform duration-300 ${isActive ? "rotate-45" : ""
+                      }`}
                   >
                     +
                   </span>
                 </button>
 
+
                 {/* Animated Content */}
                 <div
                   className={`
                     overflow-hidden transition-all duration-500 ease-in-out
-                    ${
-                      isActive
-                        ? "max-h-[700px] opacity-100 translate-y-0"
-                        : "max-h-0 opacity-0 -translate-y-2"
+                    ${isActive
+                      ? "max-h-[700px] opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 -translate-y-2"
                     }
                   `}
                 >
@@ -183,10 +186,9 @@ const TransformationServices = () => {
                           className={`
                             w-full h-full max-h-[260px] object-cover rounded-md
                             transition-all duration-700 ease-out
-                            ${
-                              loadedImages[index]
-                                ? "opacity-100 scale-100"
-                                : "opacity-0 scale-105"
+                            ${loadedImages[index]
+                              ? "opacity-100 scale-100"
+                              : "opacity-0 scale-105"
                             }
                           `}
                         />

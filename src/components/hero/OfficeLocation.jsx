@@ -5,11 +5,11 @@ import indiaFlag from "../../assets/flag/indiaFlag.png";
 const OfficeLocation = () => {
     return (
         <section className="w-full py-12 font-inter bg-[#F8F8F8]">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
 
                     {/* LEFT: Address */}
-                    <div className="w-full md:w-[40%] space-y-5 text-sm text-[#2B2B2B]">
+                    <div className="w-full md:w-[4  0%] space-y-5 text-sm text-[#2B2B2B]">
                         {/* Country */}
                         <div className="flex items-center gap-2 font-medium">
                             <img src={indiaFlag} alt="India Flag" className="w-6 h-4 rounded-sm object-cover" />

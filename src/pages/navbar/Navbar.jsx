@@ -51,9 +51,9 @@ export const Navbar = () => {
                             Industries
                         </Link>
 
-                        <Link to="/#blogs" className="hover:text-[#262F97] hover:scale-105">
+                        {/* <Link to="/#blogs" className="hover:text-[#262F97] hover:scale-105">
                             Blogs
-                        </Link>
+                        </Link> */}
 
                         <Link to="/#company" className="hover:text-[#262F97] hover:scale-105">
                             Company
@@ -95,9 +95,9 @@ export const Navbar = () => {
                                 Industries
                             </Link>
 
-                            <Link to="/#insights" className="hover:text-[#262F97]">
+                            {/* <Link to="/#insights" className="hover:text-[#262F97]">
                                 Blogs
-                            </Link>
+                            </Link> */}
 
                             <Link to="/#about" className="hover:text-[#262F97]">
                                 Company

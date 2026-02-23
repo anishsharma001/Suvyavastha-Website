@@ -38,9 +38,9 @@ export const Hero = () => {
         <WhatWeAre />
       </section>
 
-      <section id="blogs" className="scroll-mt-24">
+      {/* <section id="blogs" className="scroll-mt-24">
         <ExploreInsights />
-      </section>
+      </section> */}
 
       <section id="contact" className="scroll-mt-24">
         <GetInTouch />

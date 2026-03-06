@@ -8,7 +8,7 @@ import DecadeSection from '../../components/aboutUs/DecadeSection'
 import ServiceSitemap from '../../components/hero/ServiceSitemap'
 import MeetTheTeam from '../../components/aboutUs/MeetTheTeam'
 
-export const AboutUs = () => {
+export const About = () => {
   return (
     <div>
         <ThoughtfulTechnology />

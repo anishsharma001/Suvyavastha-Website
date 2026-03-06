@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logo.svg";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogo = () => {
+        navigate("/");
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -51,11 +53,11 @@ export const Navbar = () => {
                             Industries
                         </Link>
 
-                        {/* <Link to="/#blogs" className="hover:text-[#262F97] hover:scale-105">
+                        <Link to="/blogs/high-traffic-platform-engineering" className="hover:text-[#262F97] hover:scale-105">
                             Blogs
-                        </Link> */}
+                        </Link>
 
-                        <Link to="/#company" className="hover:text-[#262F97] hover:scale-105">
+                        <Link to="/about" className="hover:text-[#262F97] hover:scale-105">
                             Company
                         </Link>
 
@@ -79,7 +81,7 @@ export const Navbar = () => {
                         onClick={() => setOpen(!open)}
                         className="lg:hidden text-gray-700 focus:outline-none"
                     >
-                        { open ? <X /> : <Menu />}
+                        {open ? <X /> : <Menu />}
                     </button>
                 </div>
 

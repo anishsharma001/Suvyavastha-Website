@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import { Instagram, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo/whiteLogo.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,7 +78,7 @@ const Footer = () => {
               <ul className="space-y-2 text-white/80">
                 <li>
                   <Link
-                    to="/#about"
+                    to="/about"
                     className="hover:text-white transition-all duration-300 hover:translate-x-1"
                   >
                     About Us
@@ -171,7 +173,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:scale-110 hover:-translate-y-1"
             >
-              <Instagram className="w-5 h-5" />
+              <FaInstagram className="size-6" />
             </a>
 
             <a
@@ -180,7 +182,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:scale-110 hover:-translate-y-1"
             >
-              <Facebook className="w-5 h-5" />
+              <FaFacebookSquare className="size-6" />
             </a>
 
             <a
@@ -189,7 +191,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:scale-110 hover:-translate-y-1"
             >
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="size-6" />
             </a>
           </div>
         </div>

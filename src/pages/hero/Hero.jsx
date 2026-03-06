@@ -10,6 +10,7 @@ import GetInTouch from '../../components/GetInTouch/GetInTouch'
 import WhatHappensNext from '../../components/hero/WhatHappensNext'
 import ServiceSitemap from '../../components/hero/ServiceSitemap'
 import OfficeLocation from '../../components/hero/OfficeLocation'
+import MeetTheTeam from '../../components/aboutUs/MeetTheTeam'
 
 export const Hero = () => {
   return (
@@ -38,9 +39,13 @@ export const Hero = () => {
         <WhatWeAre />
       </section>
 
-      {/* <section id="blogs" className="scroll-mt-24">
+      <section id="team" className="scroll-mt-24">
+        <MeetTheTeam />
+      </section>
+
+      <section id="blogs" className="scroll-mt-24">
         <ExploreInsights />
-      </section> */}
+      </section>
 
       <section id="contact" className="scroll-mt-24">
         <GetInTouch />

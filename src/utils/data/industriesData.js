@@ -1,61 +1,60 @@
-import {
-  TrendingUp,
-  Users,
-  Lightbulb,
-  GraduationCap,
-  BarChart3,
-  ShoppingCart,
-  HeartPulse,
-  Settings,
-  DollarSign,
-} from "lucide-react";
+import { DollarSign } from "lucide-react";
+import { IoMdTrendingUp } from "react-icons/io";
+import { MdManageSearch } from "react-icons/md";
+import { MdOutlineHealthAndSafety } from "react-icons/md";
+import { MdPeople } from "react-icons/md";
+import { MdLightbulbOutline } from "react-icons/md";
+import { MdMenuBook } from "react-icons/md";
+import { MdOutlineComputer } from "react-icons/md";
+import { MdOutlineSettings } from "react-icons/md";
+
 
 export const industries = [
   {
     title: "Market Research & Insights",
-    icon: TrendingUp,
+    icon: IoMdTrendingUp,
     content:
       "Systems for controlled survey execution, traffic orchestration, respondent validation, and long-term data integrity across high-volume research environments.",
   },
   {
     title: "Government & Public Sector",
-    icon: Users,
+    icon: MdPeople,
     content:
       "Systems built for regulatory compliance, auditability, controlled access, and uninterrupted service delivery across citizen-facing and internal government platforms.",
   },
   {
     title: "SaaS, Startups & Enterprises",
-    icon: Lightbulb,
+    icon: MdLightbulbOutline,
     content:
       "Scalable software platforms designed for reliability, operational continuity, and controlled growth as products move from early adoption to enterprise scale.",
   },
   {
     title: "Education & Institutional Platforms",
-    icon: GraduationCap,
+    icon: MdMenuBook,
     content:
       "Secure and resilient systems for learning management, student data governance, assessments, and institutional operations with long-term data continuity.",
   },
   {
     title: "Analytics & Data Firms",
-    icon: BarChart3,
+    icon: MdManageSearch,
     content:
       "High-throughput data platforms engineered for accuracy, pipeline stability, observability, and trustworthy analytics at scale.",
   },
   {
     title: "E-commerce & Digital Operations",
-    icon: ShoppingCart,
+    icon: MdOutlineComputer,
     content:
       "Transaction-critical systems for catalog management, order processing, payments, integrations, and operational stability during traffic spikes.",
   },
   {
     title: "Healthcare & Health Technology",
-    icon: HeartPulse,
+    icon: MdOutlineHealthAndSafety,
     content:
       "Compliance-ready systems for sensitive health data, clinical workflows, and patient platforms where uptime, privacy, and accuracy are non-negotiable.",
   },
   {
     title: "Internal Platforms & Operational Systems",
-    icon: Settings,
+    icon: MdOutlineSettings,
     content:
       "Custom internal systems that support business operations, workflows, reporting, and decision-making with reliability over years of use.",
   },

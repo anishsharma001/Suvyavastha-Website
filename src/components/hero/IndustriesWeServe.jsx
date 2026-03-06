@@ -101,11 +101,11 @@ const IndustriesWeServe = () => {
         {/* Header */}
         <div className="flex items-center gap-3">
           <Icon
-            className={`w-5 h-5 ${
+            className={`size-8 ${
               isActive ? "text-white" : "text-[#5804BF]"
             }`}
           />
-          <span className="font-medium">
+          <span className="text-lg font-medium">
             {item.title}
           </span>
         </div>

@@ -13,7 +13,7 @@ const HeroSection = () => {
 
     gsap.to(marquee, {
       x: -totalWidth,
-      duration: 28, // ⬅️ adjust speed here (lower = faster)
+      duration: 100, // ⬅️ adjust speed here (lower = faster)
       ease: "none",
       repeat: -1,
     });

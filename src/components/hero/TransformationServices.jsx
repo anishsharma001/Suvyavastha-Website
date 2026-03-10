@@ -84,7 +84,7 @@ const TransformationServices = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10 py-16 font-inter">
         {/* Heading */}
         <h2
-          ref={headingRef}
+          // ref={1}
           className="text-2xl font-semibold text-[#2B2B2B]"
         >
           Transformation Services
@@ -92,7 +92,7 @@ const TransformationServices = () => {
 
         {/* Description */}
         <p
-          ref={descRef}
+          // ref={1}
           className="mt-2 text-sm text-[#3C3C3C] max-w-2xl"
         >
           We help organizations design, build, operate, and scale software

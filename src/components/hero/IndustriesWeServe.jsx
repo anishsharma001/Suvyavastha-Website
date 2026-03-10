@@ -44,32 +44,32 @@ const IndustriesWeServe = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
+            start: "top 50%",
             toggleActions: "restart none none none",
           },
         });
 
         tl.fromTo(
           leftRefs.current,
-          { opacity: 0, x: -60 },
+          { opacity: 0, x: -30 },
           {
             opacity: 1,
             x: 0,
-            duration: 0.8,
+            duration: 0.2,
             stagger: 0.15,
             ease: "power3.out",
           }
         ).fromTo(
           rightRefs.current,
-          { opacity: 0, x: 60 },
+          { opacity: 0, x: 30 },
           {
             opacity: 1,
             x: 0,
-            duration: 0.8,
+            duration: 0.2,
             stagger: 0.15,
             ease: "power3.out",
           },
-          "-=0.8"
+          "-=0.2"
         );
       }
     }, sectionRef);

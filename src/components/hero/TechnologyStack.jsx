@@ -8,18 +8,18 @@ const TechnologyStack = () => {
   useEffect(() => {
     const track = trackRef.current;
 
-    // duplicate content for seamless loop
-    const items = track.children;
     const totalWidth = track.scrollWidth / 2;
 
-    gsap.set(track, { x: 0 });
-
     gsap.to(track, {
-      x: -totalWidth,
-      duration: 40, // ⬅️ speed (lower = faster)
+      x: `-=${totalWidth}`,
+      duration: 250, // ↑ increase for slower
       ease: "none",
       repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+      }
     });
+
   }, []);
 
   return (

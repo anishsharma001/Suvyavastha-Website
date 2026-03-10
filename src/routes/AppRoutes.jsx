@@ -7,12 +7,14 @@ import Blog from "../pages/blog/Blog";
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="*" element={<PagesNotFound />} />
+
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Hero />} />
         <Route path="about" element={<About />} />
         <Route path="blogs/:slug" element={<Blog />} />
+        <Route path="*" element={<PagesNotFound />} />
       </Route>
+
     </Routes>
   );
 };

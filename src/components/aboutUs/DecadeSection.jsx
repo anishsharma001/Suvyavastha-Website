@@ -95,13 +95,13 @@ const DecadeSection = () => {
         </p>
 
         {/* Button */}
-        <button
-          ref={buttonRef}
+        <a
+          href="mailto:info@suvyavastha.com"
           className="mt-8 inline-flex items-center gap-2 bg-white text-[#05129C] px-10 py-3 rounded-md text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           Get In Touch
           <ArrowRight size={16} />
-        </button>
+        </a>
       </div>
     </section>
   );

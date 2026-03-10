@@ -64,7 +64,7 @@ const ThoughtfulTechnology = () => {
       className="w-full bg-[#fafafa] py-16 lg:py-24 font-inter"
     >
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        
+
         {/* LEFT CONTENT */}
         <div>
           <h2
@@ -86,13 +86,14 @@ const ThoughtfulTechnology = () => {
             thinking.
           </p>
 
-          <button
+          <a
             ref={buttonRef}
-            className="mt-8 inline-flex items-center gap-2 bg-[#150475] text-white px-6 py-3 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            href="mailto:info@suvyavastha.com"
+            className="mt-8 inline-flex items-center gap-2 text-white bg-[#05129C] px-10 py-3 rounded-md text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             Connect with us
             <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         {/* RIGHT IMAGE */}

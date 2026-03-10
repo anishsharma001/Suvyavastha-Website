@@ -11,6 +11,7 @@ import WhatHappensNext from '../../components/hero/WhatHappensNext'
 import ServiceSitemap from '../../components/hero/ServiceSitemap'
 import OfficeLocation from '../../components/hero/OfficeLocation'
 import MeetTheTeam from '../../components/aboutUs/MeetTheTeam'
+import ContactCTA from '../../components/GetInTouch/ContactCTA'
 
 export const Hero = () => {
   return (
@@ -48,7 +49,8 @@ export const Hero = () => {
       </section>
 
       <section id="contact" className="scroll-mt-24">
-        <GetInTouch />
+        {/* <GetInTouch /> */}
+        <ContactCTA />
       </section>
 
       <WhatHappensNext />

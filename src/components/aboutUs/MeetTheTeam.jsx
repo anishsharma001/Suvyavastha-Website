@@ -9,15 +9,15 @@ import swati from "../../assets/team/swati.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const team = [
+     {
+        name: "Anish Sharma",
+        role: "Director",
+        image: anish,
+    },
     {
         name: "Shubham Sharma",
         role: "Director",
         image: shubham,
-    },
-    {
-        name: "Anish Sharma",
-        role: "Director",
-        image: anish,
     },
     {
         name: "Swati Pokhariyal",

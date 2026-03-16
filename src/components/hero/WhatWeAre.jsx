@@ -126,7 +126,7 @@ const WhatWeAre = () => {
         </div>
 
         {/* Image */}
-        <div className="mt-10 overflow-hidden rounded-md hover:scale-90 transition-transform duration-300">
+        <div className="mt-10 overflow-hidden rounded-md transition-transform duration-300">
           <img
             ref={imageRef}
             src={teamImage}

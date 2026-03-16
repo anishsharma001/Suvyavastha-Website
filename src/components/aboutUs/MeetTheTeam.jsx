@@ -20,7 +20,7 @@ const team = [
         image: shubham,
     },
     {
-        name: "Swati Pokhariyal",
+        name: "Swati Pokhriyal",
         role: "HR Manager",
         image: swati,
     },

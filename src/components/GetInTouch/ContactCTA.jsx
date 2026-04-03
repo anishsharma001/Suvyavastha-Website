@@ -46,7 +46,7 @@ const ContactCTA = () => {
             </div>
 
             {/* Bottom Contact */}
-            <div className="bg-white py-8 text-center">
+            {/* <div className="bg-white py-8 text-center">
 
                 <p className="text-base text-[#3C3C3C]">Or</p>
 
@@ -64,7 +64,7 @@ const ContactCTA = () => {
                     +91 87082 82097
                 </a>
 
-            </div>
+            </div> */}
 
         </section>
     );

@@ -21,33 +21,33 @@ const Footer = () => {
         scrollTrigger: {
           trigger: footerRef.current,
           start: "top 85%",
-          toggleActions: "restart none none none",
+          toggleActions: "play none none none",
         },
       });
 
       tl.fromTo(
         topRef.current,
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.8 }
       )
         .fromTo(
           linksRef.current,
           { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.15,
-            ease: "power3.out",
-          },
+          { opacity: 1, y: 0, stagger: 0.15, duration: 0.7 },
           "-=0.4"
         )
         .fromTo(
           bottomRef.current,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          { opacity: 1, y: 0, duration: 0.6 },
           "-=0.4"
         );
+
+      // 🔥 IMPORTANT FIX
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 200);
+
     }, footerRef);
 
     return () => ctx.revert();

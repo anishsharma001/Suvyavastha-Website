@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import heroVideo from "../../assets/hero/heroVideo.mp4";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -26,13 +25,17 @@ const HeroSection = () => {
     >
       {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src={heroVideo}
         autoPlay
         loop
         muted
         playsInline
-      />
+        preload="metadata"
+        // poster="/images/hero-poster.jpg"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/hero.webm" type="video/webm" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Blue Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F6A]/90 via-[#0B1F6A]/70 to-[#0B1F6A]/90" />

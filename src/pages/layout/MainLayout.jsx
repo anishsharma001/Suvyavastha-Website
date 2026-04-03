@@ -3,9 +3,14 @@ import { Outlet } from 'react-router-dom';
 import { Navbar } from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import { useLocation } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const MainLayout = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [location.pathname]);
 
   useEffect(() => {
     if (location.hash) {

@@ -9,81 +9,58 @@ const IndustriesWeServe = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const sectionRef = useRef(null);
-  const leftRefs = useRef([]);
-  const rightRefs = useRef([]);
+  const cardRefs = useRef([]);
 
-  // split data into two columns
   const leftColumn = industries.filter((_, i) => i % 2 === 0);
   const rightColumn = industries.filter((_, i) => i % 2 !== 0);
 
-  // 🔥 Scroll Animation
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const isMobile = window.innerWidth < 768;
+      const leftCards = cardRefs.current.slice(0, leftColumn.length);
+      const rightCards = cardRefs.current.slice(leftColumn.length);
 
-      if (isMobile) {
-        // 📱 Mobile: top to bottom reveal
-        gsap.fromTo(
-          [...leftRefs.current, ...rightRefs.current],
-          { opacity: 0, y: 40 },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "restart none none reset",
+        },
+      });
+
+      // 🧠 animate row by row (left + right together)
+      leftCards.forEach((leftEl, i) => {
+        const rightEl = rightCards[i];
+
+        tl.fromTo(
+          [leftEl, rightEl].filter(Boolean), // safe check
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.96,
+          },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 80%",
-              toggleActions: "restart none none none",
-            },
-          }
-        );
-      } else {
-        // 💻 Desktop: left & right slide in
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 50%",
-            toggleActions: "restart none none none",
+            scale: 1,
+            duration: 1.1,
+            ease: "power2.out",
           },
-        });
-
-        tl.fromTo(
-          leftRefs.current,
-          { opacity: 0, x: -30 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.2,
-            stagger: 0.15,
-            ease: "power3.out",
-          }
-        ).fromTo(
-          rightRefs.current,
-          { opacity: 0, x: 30 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.2,
-            stagger: 0.15,
-            ease: "power3.out",
-          },
-          "-=0.2"
+          i === 0 ? 0 : "-=0.8" // overlap for smooth flow
         );
-      }
+      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
-  const renderCard = (item, realIndex, column, refArray, i) => {
+  const renderCard = (item, realIndex, i) => {
     const isActive = activeIndex === realIndex;
     const Icon = item.icon;
 
     return (
       <div
-        ref={(el) => (refArray.current[i] = el)}
+        ref={(el) => (cardRefs.current[i] = el)}
         key={item.title}
         onClick={() =>
           setActiveIndex(isActive ? null : realIndex)
@@ -91,34 +68,29 @@ const IndustriesWeServe = () => {
         className={`
           cursor-pointer rounded-xl p-6 mb-6
           transition-all duration-300
-          ${
-            isActive
-              ? "bg-[#5804BF] text-white"
-              : "bg-white text-[#5804BF] hover:scale-105 transition"
+          ${isActive
+            ? "bg-[#5804BF] text-white"
+            : "bg-white text-[#5804BF] hover:scale-[1.02]"
           }
         `}
       >
-        {/* Header */}
         <div className="flex items-center gap-3">
           <Icon
-            className={`size-8 ${
-              isActive ? "text-white" : "text-[#5804BF]"
-            }`}
+            className={`size-8 ${isActive ? "text-white" : "text-[#5804BF]"
+              }`}
           />
           <span className="text-lg font-medium">
             {item.title}
           </span>
         </div>
 
-        {/* Content */}
         <div
           className={`
             mt-4 text-sm leading-relaxed overflow-hidden
             transition-all duration-300 ease-in-out
-            ${
-              isActive
-                ? "opacity-100 max-h-40"
-                : "opacity-0 max-h-0"
+            ${isActive
+              ? "opacity-100 max-h-40"
+              : "opacity-0 max-h-0"
             }
           `}
         >
@@ -134,7 +106,7 @@ const IndustriesWeServe = () => {
       id="industries"
       className="scroll-mt-24 bg-[#BDA3F3] bg-opacity-[20%] py-16 font-inter"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 2xl:px-0">
         <h2 className="text-2xl font-semibold text-[#2B2B2B]">
           Industries We Serve
         </h2>
@@ -145,17 +117,10 @@ const IndustriesWeServe = () => {
           responsibilities.
         </p>
 
-        {/* Two independent columns */}
         <div className="mt-10 flex flex-col md:flex-row gap-6">
           <div className="flex-1">
             {leftColumn.map((item, i) =>
-              renderCard(
-                item,
-                industries.indexOf(item),
-                "left",
-                leftRefs,
-                i
-              )
+              renderCard(item, industries.indexOf(item), i)
             )}
           </div>
 
@@ -164,9 +129,7 @@ const IndustriesWeServe = () => {
               renderCard(
                 item,
                 industries.indexOf(item),
-                "right",
-                rightRefs,
-                i
+                i + leftColumn.length // important
               )
             )}
           </div>

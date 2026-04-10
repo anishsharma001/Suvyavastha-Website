@@ -49,17 +49,14 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 2xl:px-0 h-full flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 2xl:px-0 h-full flex items-center">
         <div className="max-w-2xl text-white">
           <h1 className="text-3xl sm:text-4xl font-semibold leading-tight">
-            When your business can’t afford
-            <br />
-            breakdowns, shortcuts, or rewrites
+            We Build the Intelligent Systems Your Business Runs On.
           </h1>
 
           <p className="mt-5 text-sm sm:text-lg font-light">
-            We plan carefully, build thoughtfully, and stay accountable after
-            launch.
+            From architecture to deployment and long-term operations, we engineer AI-powered software that is reliable, secure, and built for the demands of enterprise scale.
           </p>
 
           <p className="mt-3 text-xs sm:text-base font-medium">

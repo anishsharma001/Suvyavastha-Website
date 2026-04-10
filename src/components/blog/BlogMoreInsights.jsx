@@ -24,7 +24,7 @@ const BlogMoreInsights = ({ currentSlug }) => {
 
             <img
               src={blog.image}
-              className="w-full h-[260px] object-cover"
+              className="w-full h-[260px] object-cover hover:scale-105 transition-all duration-300"
             />
 
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"/>

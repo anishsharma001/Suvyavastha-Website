@@ -36,7 +36,7 @@ const MissionVision = () => {
       ref={sectionRef}
       className="w-full bg-white py-14 font-inter"
     >
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:px-16 2xl:px-0">
 
         {/* Mission */}
         <div

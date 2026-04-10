@@ -61,9 +61,9 @@ const ThoughtfulTechnology = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#fafafa] py-16 lg:py-24 font-inter"
+      className="w-full bg-[#fafafa] py-16 lg:py-24 font-inter "
     >
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center lg:px-16 2xl:px-0">
 
         {/* LEFT CONTENT */}
         <div>

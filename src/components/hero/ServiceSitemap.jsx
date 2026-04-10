@@ -49,7 +49,7 @@ const ServiceSitemap = () => {
 
   return (
     <section className="py-16 font-inter bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 2xl:px-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 2xl:px-0">
         {/* Header */}
         <h2 className="text-lg font-semibold text-[#2B2B2B]">
           Service Sitemap

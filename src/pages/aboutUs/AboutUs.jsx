@@ -10,7 +10,7 @@ import MeetTheTeam from '../../components/aboutUs/MeetTheTeam'
 
 export const About = () => {
   return (
-    <div>
+    <div className=''>
         <ThoughtfulTechnology />
         <AboutSuvyavastha />
         <MissionVision />

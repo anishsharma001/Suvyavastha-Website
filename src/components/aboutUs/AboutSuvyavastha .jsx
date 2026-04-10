@@ -53,7 +53,7 @@ const AboutSuvyavastha = () => {
             ref={sectionRef}
             className="bg-[#BDA3F3] bg-opacity-[20%] py-16 lg:py-24 font-inter"
         >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-6 lg:px-16 2xl:px-0">
 
                 {/* Heading */}
                 <div className="max-w-3xl">
